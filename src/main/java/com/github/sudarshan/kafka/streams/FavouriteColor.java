@@ -65,12 +65,13 @@ public class FavouriteColor {
 
         Properties config = new Properties();
 
-        config.put(StreamsConfig.APPLICATION_ID_CONFIG, "favourite-color");
+        config.put(StreamsConfig.APPLICATION_ID_CONFIG, "favourite-color1");
         config.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "172.30.5.111:9092");
         config.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
         config.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         config.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         config.put(StreamsConfig.STATE_DIR_CONFIG, "/temp2/favcolor");
+        config.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG,"0");
 
 
         FavouriteColor favcolor = new FavouriteColor();
